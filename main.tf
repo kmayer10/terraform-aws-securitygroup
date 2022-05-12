@@ -27,7 +27,7 @@ resource "aws_security_group" "aws_security_group" {
       protocol = lookup(ingress.value, "protocol", -1)
       security_groups = lookup(ingress.value, "security_groups", null)
       self = lookup(ingress.value, "self", null)
-      to_port = lookup(ingress.value, "to_port", null)
+      to_port = lookup(ingress.value, "to_port", 0)
     }
   }
 }
